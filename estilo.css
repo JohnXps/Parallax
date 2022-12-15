@@ -1,0 +1,80 @@
+body,html{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-flow: row;
+    background-color: #0000ff;
+    height: 100px;
+}
+
+.container h1{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Times New Roman';
+    color: #ffffff;
+}
+
+
+
+
+
+.wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    perspective: 2px; /*distanciar entre os dois planos*/
+    transform-style: preserve-3d; /*indicar os elementos filhos*/
+}
+
+.secao{
+    margin: 0px;
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    transform-style: inherit;
+}
+
+.secao::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -10;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: translateZ(-1px) scale(1.5);
+}
+
+.conteudo{
+    position: absolute;
+    width: 80%;
+    top: 25%;
+    padding: 20px;
+    background-color: #8d7219a8;
+    color: #000;
+    box-shadow: 3px 3px 3px #25231e;
+    left: 8%;
+}
+
+.fundo1::before{
+    background-image: url(img/img1.jpg);
+}
+
+.fundo2::before{
+    background-image: url(img/img2.jpg);
+}
+
+footer{
+    font-size: 15px;
+    background-color: #25231e;
+    color: #ffffff;
+    text-align: center;
+    height: 20px;
+    
+}
